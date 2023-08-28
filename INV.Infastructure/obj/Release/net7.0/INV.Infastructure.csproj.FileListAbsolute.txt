@@ -1,0 +1,17 @@
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Infastructure\bin\Release\net7.0\INV.Infastructure.deps.json
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Infastructure\bin\Release\net7.0\INV.Infastructure.runtimeconfig.json
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Infastructure\bin\Release\net7.0\INV.Infastructure.dll
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Infastructure\bin\Release\net7.0\INV.Infastructure.pdb
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Infastructure\bin\Release\net7.0\INV.Domin.dll
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Infastructure\bin\Release\net7.0\INV.Domin.pdb
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Infastructure\obj\Release\net7.0\INV.Infastructure.csproj.AssemblyReference.cache
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Infastructure\obj\Release\net7.0\INV.Infastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Infastructure\obj\Release\net7.0\INV.Infastructure.AssemblyInfoInputs.cache
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Infastructure\obj\Release\net7.0\INV.Infastructure.AssemblyInfo.cs
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Infastructure\obj\Release\net7.0\INV.Infastructure.csproj.CoreCompileInputs.cache
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Infastructure\obj\Release\net7.0\INV.Infastructure.csproj.CopyComplete
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Infastructure\obj\Release\net7.0\INV.Infastructure.dll
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Infastructure\obj\Release\net7.0\refint\INV.Infastructure.dll
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Infastructure\obj\Release\net7.0\INV.Infastructure.pdb
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Infastructure\obj\Release\net7.0\INV.Infastructure.genruntimeconfig.cache
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Infastructure\obj\Release\net7.0\ref\INV.Infastructure.dll

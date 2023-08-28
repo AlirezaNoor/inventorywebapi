@@ -1,0 +1,17 @@
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\bin\Release\net7.0\INV.Services.deps.json
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\bin\Release\net7.0\INV.Services.dll
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\bin\Release\net7.0\INV.Services.pdb
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\bin\Release\net7.0\INV.Domin.dll
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\bin\Release\net7.0\INV.Infastructure.dll
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\bin\Release\net7.0\INV.Infastructure.pdb
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\bin\Release\net7.0\INV.Domin.pdb
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\obj\Release\net7.0\INV.Services.csproj.AssemblyReference.cache
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\obj\Release\net7.0\INV.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\obj\Release\net7.0\INV.Services.AssemblyInfoInputs.cache
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\obj\Release\net7.0\INV.Services.AssemblyInfo.cs
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\obj\Release\net7.0\INV.Services.csproj.CoreCompileInputs.cache
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\obj\Release\net7.0\INV.Services.csproj.CopyComplete
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\obj\Release\net7.0\INV.Services.dll
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\obj\Release\net7.0\refint\INV.Services.dll
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\obj\Release\net7.0\INV.Services.pdb
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\obj\Release\net7.0\ref\INV.Services.dll
