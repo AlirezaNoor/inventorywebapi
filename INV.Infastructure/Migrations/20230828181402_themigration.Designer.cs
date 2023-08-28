@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace INV.Infastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbcointext))]
-    [Migration("20230826075757_ttt")]
-    partial class ttt
+    [Migration("20230828181402_themigration")]
+    partial class themigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -144,6 +144,87 @@ namespace INV.Infastructure.Migrations
                     b.ToTable("ApplicationUser", (string)null);
                 });
 
+            modelBuilder.Entity("INV.Domin.Counteries.Country", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("countery", (string)null);
+                });
+
+            modelBuilder.Entity("INV.Domin.Products.product", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"));
+
+                    b.Property<byte>("Isrefregertor")
+                        .HasColumnType("tinyint");
+
+                    b.Property<int>("Unit")
+                        .HasColumnType("int");
+
+                    b.Property<long>("countryid")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("inbox")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("supplierid")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("wight")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("countryid");
+
+                    b.HasIndex("supplierid");
+
+                    b.ToTable("Products", (string)null);
+                });
+
+            modelBuilder.Entity("INV.Domin.Supplier.SupplierAgg", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("telephone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("website")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Supplier", (string)null);
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.Property<int>("Id")
@@ -248,6 +329,25 @@ namespace INV.Infastructure.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("INV.Domin.Products.product", b =>
+                {
+                    b.HasOne("INV.Domin.Counteries.Country", "Country")
+                        .WithMany()
+                        .HasForeignKey("countryid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("INV.Domin.Supplier.SupplierAgg", "Supplier")
+                        .WithMany()
+                        .HasForeignKey("supplierid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Country");
+
+                    b.Navigation("Supplier");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

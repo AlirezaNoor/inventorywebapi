@@ -88,5 +88,5 @@ D:\aspinventoryproject\WebapiFull\InventoryWebApi\InventoryWebApi\bin\Debug\net7
 D:\aspinventoryproject\WebapiFull\InventoryWebApi\InventoryWebApi\bin\Debug\net7.0\System.CodeDom.dll
 D:\aspinventoryproject\WebapiFull\InventoryWebApi\InventoryWebApi\bin\Debug\net7.0\INV.Services.dll
 D:\aspinventoryproject\WebapiFull\InventoryWebApi\InventoryWebApi\bin\Debug\net7.0\INV.Services.pdb
-D:\aspinventoryproject\WebapiFull\InventoryWebApi\InventoryWebApi\bin\Debug\net7.0\Application contract.dll
-D:\aspinventoryproject\WebapiFull\InventoryWebApi\InventoryWebApi\bin\Debug\net7.0\Application contract.pdb
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\InventoryWebApi\bin\Debug\net7.0\INV.Applicationcontract.dll
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\InventoryWebApi\bin\Debug\net7.0\INV.Applicationcontract.pdb

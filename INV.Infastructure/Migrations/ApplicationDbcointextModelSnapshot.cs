@@ -331,13 +331,13 @@ namespace INV.Infastructure.Migrations
             modelBuilder.Entity("INV.Domin.Products.product", b =>
                 {
                     b.HasOne("INV.Domin.Counteries.Country", "Country")
-                        .WithMany("Products")
+                        .WithMany()
                         .HasForeignKey("countryid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("INV.Domin.Supplier.SupplierAgg", "Supplier")
-                        .WithMany("Products")
+                        .WithMany()
                         .HasForeignKey("supplierid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -396,16 +396,6 @@ namespace INV.Infastructure.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("INV.Domin.Counteries.Country", b =>
-                {
-                    b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("INV.Domin.Supplier.SupplierAgg", b =>
-                {
-                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

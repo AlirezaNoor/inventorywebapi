@@ -1,0 +1,15 @@
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\Application contract\bin\Debug\net7.0\INV.Applicationcontract.deps.json
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\Application contract\bin\Debug\net7.0\INV.Applicationcontract.dll
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\Application contract\bin\Debug\net7.0\INV.Applicationcontract.pdb
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\Application contract\bin\Debug\net7.0\INV.Domin.dll
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\Application contract\bin\Debug\net7.0\INV.Domin.pdb
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\Application contract\obj\Debug\net7.0\INV.Applicationcontract.csproj.AssemblyReference.cache
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\Application contract\obj\Debug\net7.0\INV.Applicationcontract.GeneratedMSBuildEditorConfig.editorconfig
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\Application contract\obj\Debug\net7.0\INV.Applicationcontract.AssemblyInfoInputs.cache
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\Application contract\obj\Debug\net7.0\INV.Applicationcontract.AssemblyInfo.cs
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\Application contract\obj\Debug\net7.0\INV.Applicationcontract.csproj.CoreCompileInputs.cache
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\Application contract\obj\Debug\net7.0\INV.Applicationcontract.csproj.CopyComplete
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\Application contract\obj\Debug\net7.0\INV.Applicationcontract.dll
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\Application contract\obj\Debug\net7.0\refint\INV.Applicationcontract.dll
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\Application contract\obj\Debug\net7.0\INV.Applicationcontract.pdb
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\Application contract\obj\Debug\net7.0\ref\INV.Applicationcontract.dll

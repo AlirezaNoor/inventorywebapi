@@ -18,9 +18,10 @@ namespace InventoryWebApi.Controllers
         }
 
         [HttpGet("produts")]
-        public IEnumerable<product> getall()
+        public async Task<IEnumerable<product>> getall()
         {
-            return _context.productUw.get(null, "Country,Supplier");
+            var tes= _context.productUw.get(null, "Country,Supplier");
+            return tes;
 
         }
         [HttpGet("product")]

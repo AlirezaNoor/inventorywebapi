@@ -9,7 +9,6 @@ namespace INV.Domin.Supplier
         public string  name { get; set; }
         public string telephone { get; set; }
         public string website{ get; set; }
-        public List<product> Products { get; set; }
 
     }
 }

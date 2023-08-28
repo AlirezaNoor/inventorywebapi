@@ -47,7 +47,7 @@ namespace INV.Services.Reposetory
                     query = query.Include(item);
                 }
             }
-
+          
             return query;
         }
         public virtual void Delete(TEntity entity)

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace INV.Infastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class ttt : Migration
+    public partial class themigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -55,6 +55,34 @@ namespace INV.Infastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ApplicationUser", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "countery",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_countery", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Supplier",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    telephone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    website = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Supplier", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -163,6 +191,37 @@ namespace INV.Infastructure.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Products",
+                columns: table => new
+                {
+                    id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Unit = table.Column<int>(type: "int", nullable: false),
+                    inbox = table.Column<long>(type: "bigint", nullable: false),
+                    wight = table.Column<long>(type: "bigint", nullable: false),
+                    supplierid = table.Column<long>(type: "bigint", nullable: false),
+                    countryid = table.Column<long>(type: "bigint", nullable: false),
+                    Isrefregertor = table.Column<byte>(type: "tinyint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Products", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_Products_Supplier_supplierid",
+                        column: x => x.supplierid,
+                        principalTable: "Supplier",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Products_countery_countryid",
+                        column: x => x.countryid,
+                        principalTable: "countery",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "RoleNameIndex",
                 table: "ApplicationRole",
@@ -201,6 +260,16 @@ namespace INV.Infastructure.Migrations
                 name: "IX_AspNetUserRoles_RoleId",
                 table: "AspNetUserRoles",
                 column: "RoleId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_countryid",
+                table: "Products",
+                column: "countryid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_supplierid",
+                table: "Products",
+                column: "supplierid");
         }
 
         /// <inheritdoc />
@@ -222,10 +291,19 @@ namespace INV.Infastructure.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Products");
+
+            migrationBuilder.DropTable(
                 name: "ApplicationRole");
 
             migrationBuilder.DropTable(
                 name: "ApplicationUser");
+
+            migrationBuilder.DropTable(
+                name: "Supplier");
+
+            migrationBuilder.DropTable(
+                name: "countery");
         }
     }
 }

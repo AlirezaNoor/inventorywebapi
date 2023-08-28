@@ -9,6 +9,7 @@
       "InventoryWebApi/1.0.0": {
         "dependencies": {
           "Framwork": "1.0.0",
+          "INV.Applicationcontract": "1.0.0",
           "INV.Infastructure": "1.0.0",
           "INV.Services": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.10",
@@ -734,11 +735,6 @@
           }
         }
       },
-      "Application contract/1.0.0": {
-        "runtime": {
-          "Application contract.dll": {}
-        }
-      },
       "Framwork/1.0.0": {
         "dependencies": {
           "INV.Infastructure": "1.0.0",
@@ -749,6 +745,14 @@
         },
         "runtime": {
           "Framwork.dll": {}
+        }
+      },
+      "INV.Applicationcontract/1.0.0": {
+        "dependencies": {
+          "INV.Domin": "1.0.0"
+        },
+        "runtime": {
+          "INV.Applicationcontract.dll": {}
         }
       },
       "INV.Domin/1.0.0": {
@@ -1332,12 +1336,12 @@
       "path": "system.windows.extensions/5.0.0",
       "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
     },
-    "Application contract/1.0.0": {
+    "Framwork/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Framwork/1.0.0": {
+    "INV.Applicationcontract/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
