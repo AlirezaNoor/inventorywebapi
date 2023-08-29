@@ -15,12 +15,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.getconection(conectionstringAdress);
+builder.Services.AddAutoMapper (typeof(Program));
 builder.Services.AddIdentity<ApplicationUser,ApplicationRole>(opt =>
     {
         opt.Password.RequireDigit = false;
         opt.Password.RequireLowercase = false;
         opt.Password.RequireLowercase = false;
         opt.Password.RequireNonAlphanumeric = false;
+        opt.Password.RequireUppercase = false;
     }).AddRoles<ApplicationRole>()
     .AddRoleValidator<RoleValidator<ApplicationRole>>()
     .AddRoleManager<RoleManager<ApplicationRole>>()

@@ -1,4 +1,5 @@
-﻿using INV.Applicationcontract.Applicationuser;
+﻿using AutoMapper;
+using INV.Applicationcontract.Applicationuser;
 using INV.Domin;
 using INV.Services.Intertface;
 using Microsoft.AspNetCore.Identity;
@@ -8,15 +9,17 @@ namespace InventoryWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserApiController:ControllerBase
+    public class UserApiController : ControllerBase
     {
         private readonly IUnitOfWork _context;
         private readonly UserManager<ApplicationUser> _user;
+        private readonly IMapper _mapper;
 
-        public UserApiController(IUnitOfWork context, UserManager<ApplicationUser> user)
+        public UserApiController(IUnitOfWork context, UserManager<ApplicationUser> user, IMapper mapper)
         {
             _context = context;
             _user = user;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -28,9 +31,9 @@ namespace InventoryWebApi.Controllers
 
         [HttpGet]
         [Route("User")]
-        public IActionResult Get(long id)
+        public IActionResult Get(string id)
         {
-            if (id==null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -49,24 +52,24 @@ namespace InventoryWebApi.Controllers
         }
         [HttpPost]
         [Route("cretae")]
-        public async Task<IActionResult> create([FromForm]Createuser u)
+        public async Task<IActionResult> create(Createuser u)
         {
             if (!ModelState.IsValid)
             {
-                return  BadRequest();
+                return BadRequest();
             }
 
             var result = _context.applicationuserUw.get(x =>
                 x.FirstName == u.FirstName || x.Email == u.Email || x.UserName == u.UserName);
 
-            if (result.Count()>0)
+            if (result.Count() > 0)
             {
                 return BadRequest("Doublicated user");
             }
 
             try
             {
-                ApplicationUser user=new()
+                ApplicationUser user = new()
                 {
                     FirstName = u.FirstName,
                     Lastname = u.Lastname,
@@ -77,13 +80,68 @@ namespace InventoryWebApi.Controllers
                     UserType = u.UserType,
                     melicode = u.melicode,
                     personalcode = u.personalcode
+                };
+                var re = await _user.CreateAsync(user, "123456789");
+                if (re.Succeeded)
+                {
+                    if (u.UserType == 1)
+                    {
+                        await _user.AddToRoleAsync(user, "admin");
+
+                    }
+
+                    if (u.UserType == 2)
+                    {
+                        await _user.AddToRoleAsync(user, "user");
+
+                    }
+
                 }
-                var re=_user.CreateAsync()
+                _context.SaveAsync();
+                return Ok(user);
+
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 throw;
+            }
+        }
+
+        [HttpPut]
+        [Route("updateusers")]
+        public async Task<IActionResult> update(EditedUSer u)
+        {
+            if (u.Id == null)
+            {
+                return BadRequest();
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                var user = await _user.FindByIdAsync(u.Id);
+                if (user == null)
+                {
+                    return BadRequest();
+                }
+
+                var userformap = _mapper.Map(u, user);
+                var test = await _user.UpdateAsync(userformap);
+                if (!test.Succeeded)
+                {
+                    return BadRequest();
+                }
+
+                return Ok(u);
+            }
+            catch (Exception exception)
+            {
+                return BadRequest();
             }
         }
     }
