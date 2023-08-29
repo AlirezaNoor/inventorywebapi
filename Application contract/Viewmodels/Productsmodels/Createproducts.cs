@@ -9,6 +9,10 @@ namespace INV.Applicationcontract.Viewmodels.Productsmodels
         public string name { get; set; }
         [Range(1, long.MaxValue, ErrorMessage = "نوع بسته بندی انتیخاب نشده است  ")]
         public Units Unit { get; set; }
+        [Range(1, long.MaxValue, ErrorMessage = "کد کالا وارد نشده سات ")]
+
+        public string code { get; set; }
+
         [Required(AllowEmptyStrings = false, ErrorMessage = "تعداد کالا کالا وارد نشده است ")]
 
         public long inbox { get; set; }

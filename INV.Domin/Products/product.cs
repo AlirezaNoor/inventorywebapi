@@ -9,6 +9,7 @@ namespace INV.Domin.Products
     {
         public long id { get; set; }
         public  string name { get; set; }
+        public  string code { get; set; }
         public Units Unit { get; set; }
         public  long inbox { get; set; }
         public long wight { get; set; }
