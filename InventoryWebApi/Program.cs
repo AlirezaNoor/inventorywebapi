@@ -1,4 +1,5 @@
 using Framwork;
+using Framwork.Interface;
 using INV.Domin;
 using INV.Infastructure;
 using INV.Services.Intertface;
@@ -30,6 +31,7 @@ builder.Services.AddIdentity<ApplicationUser,ApplicationRole>(opt =>
     .AddSignInManager<SignInManager<ApplicationUser>>();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IJWTTokenGenrator, JWTTokenGenrator>();
 
 var app = builder.Build();
  

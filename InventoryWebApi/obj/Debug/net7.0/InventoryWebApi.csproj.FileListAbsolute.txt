@@ -90,3 +90,5 @@ D:\aspinventoryproject\WebapiFull\InventoryWebApi\InventoryWebApi\bin\Debug\net7
 D:\aspinventoryproject\WebapiFull\InventoryWebApi\InventoryWebApi\bin\Debug\net7.0\INV.Services.pdb
 D:\aspinventoryproject\WebapiFull\InventoryWebApi\InventoryWebApi\bin\Debug\net7.0\INV.Applicationcontract.dll
 D:\aspinventoryproject\WebapiFull\InventoryWebApi\InventoryWebApi\bin\Debug\net7.0\INV.Applicationcontract.pdb
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\InventoryWebApi\bin\Debug\net7.0\AutoMapper.dll
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\InventoryWebApi\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
