@@ -2,6 +2,7 @@
 using INV.Domin.Counteries;
 using INV.Domin.FisicalYear;
 using INV.Domin.Products;
+using INV.Domin.Stores;
 using INV.Domin.Supplier;
 using INV.Infastructure;
 using INV.Services.Intertface;
@@ -23,6 +24,7 @@ namespace INV.Services.Reposetory
         private genricReposetory<SupplierAgg> _supplier;
         private genricReposetory<product> _product;
          private  genricReposetory<FisicalYear> _fisicalYear;
+          private genricReposetory<Store> _store;
 
         public genricReposetory<ApplicationUser> applicationuserUw
         {
@@ -102,6 +104,18 @@ namespace INV.Services.Reposetory
                 }
 
                 return _fisicalYear;
+            }
+        }
+
+        public genricReposetory<Store> storeuw
+        {
+            get
+            {
+                if (_store==null)
+                {
+                    _store= new genricReposetory<Store>(_context);
+                }
+                return _store;
             }
         }
 

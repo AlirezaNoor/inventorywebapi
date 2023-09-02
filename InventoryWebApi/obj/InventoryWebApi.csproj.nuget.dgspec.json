@@ -305,6 +305,9 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
+              "D:\\aspinventoryproject\\WebapiFull\\InventoryWebApi\\Application contract\\INV.Applicationcontract.csproj": {
+                "projectPath": "D:\\aspinventoryproject\\WebapiFull\\InventoryWebApi\\Application contract\\INV.Applicationcontract.csproj"
+              },
               "D:\\aspinventoryproject\\WebapiFull\\InventoryWebApi\\INV.Infastructure\\INV.Infastructure.csproj": {
                 "projectPath": "D:\\aspinventoryproject\\WebapiFull\\InventoryWebApi\\INV.Infastructure\\INV.Infastructure.csproj"
               }

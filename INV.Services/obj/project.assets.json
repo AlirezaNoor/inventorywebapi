@@ -1110,6 +1110,19 @@
           }
         }
       },
+      "INV.Applicationcontract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "INV.Domin": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/INV.Applicationcontract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/INV.Applicationcontract.dll": {}
+        }
+      },
       "INV.Domin/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -3374,6 +3387,11 @@
         "version.txt"
       ]
     },
+    "INV.Applicationcontract/1.0.0": {
+      "type": "project",
+      "path": "../Application contract/INV.Applicationcontract.csproj",
+      "msbuildProject": "../Application contract/INV.Applicationcontract.csproj"
+    },
     "INV.Domin/1.0.0": {
       "type": "project",
       "path": "../INV.Domin/INV.Domin.csproj",
@@ -3387,6 +3405,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "INV.Applicationcontract >= 1.0.0",
       "INV.Infastructure >= 1.0.0"
     ]
   },
@@ -3416,6 +3435,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "D:\\aspinventoryproject\\WebapiFull\\InventoryWebApi\\Application contract\\INV.Applicationcontract.csproj": {
+              "projectPath": "D:\\aspinventoryproject\\WebapiFull\\InventoryWebApi\\Application contract\\INV.Applicationcontract.csproj"
+            },
             "D:\\aspinventoryproject\\WebapiFull\\InventoryWebApi\\INV.Infastructure\\INV.Infastructure.csproj": {
               "projectPath": "D:\\aspinventoryproject\\WebapiFull\\InventoryWebApi\\INV.Infastructure\\INV.Infastructure.csproj"
             }

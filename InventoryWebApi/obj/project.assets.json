@@ -1401,6 +1401,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "INV.Applicationcontract": "1.0.0",
           "INV.Infastructure": "1.0.0"
         },
         "compile": {
