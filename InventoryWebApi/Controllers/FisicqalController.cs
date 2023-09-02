@@ -3,6 +3,7 @@ using INV.Applicationcontract.DrowpdownDTo;
 using INV.Applicationcontract.Viewmodels.Fisicalyear;
 using INV.Domin.FisicalYear;
 using INV.Services.Intertface;
+using INV.Services.Intertface.CostumReposetpory;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,10 +14,12 @@ namespace InventoryWebApi.Controllers
     public class FisicqalController : ControllerBase
     {
         private readonly IUnitOfWork _context;
+        private readonly IFisicalReposetory _fisicalReposetory;
 
-        public FisicqalController(IUnitOfWork context)
+        public FisicqalController(IUnitOfWork context, IFisicalReposetory fisicalReposetory)
         {
             _context = context;
+            _fisicalReposetory = fisicalReposetory;
         }
 
         [HttpGet]
@@ -38,6 +41,13 @@ namespace InventoryWebApi.Controllers
                 return BadRequest(e);
             }
 
+            var result = _fisicalReposetory.checkeddate(e.StartDateTime, e.EndDateTime);
+
+            if (result==false)
+            {
+                return BadRequest();
+            }
+
             try
             {
                 FisicalYear f = new()
@@ -45,7 +55,7 @@ namespace InventoryWebApi.Controllers
                     Createfiscalyear = DateTime.Now,
                     StartDateTime = e.StartDateTime,
                     EndDateTime = e.EndDateTime,
-                    UserId = "",
+                    UserId = e.UserId,
                     FisicalFlag = false
                 };
                 _context.fisiscalyearuw.insert(f);

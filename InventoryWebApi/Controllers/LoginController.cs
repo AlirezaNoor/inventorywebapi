@@ -54,7 +54,8 @@ namespace InventoryWebApi.Controllers
                 {
                     username = user.UserName,
                     Token = await _jwtTokenGenrator.CreateToken(user),
-                    Roles = await _userManager.GetRolesAsync(user)
+                    Roles = await _userManager.GetRolesAsync(user),
+                    userid = user.Id
                 };
                 return Ok(usertoken);
 

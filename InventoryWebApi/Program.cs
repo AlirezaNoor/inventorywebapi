@@ -3,7 +3,9 @@ using Framwork.Interface;
 using INV.Domin;
 using INV.Infastructure;
 using INV.Services.Intertface;
+using INV.Services.Intertface.CostumReposetpory;
 using INV.Services.Reposetory;
+using INV.Services.Reposetory.CostumReposetpory;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,8 +18,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.getconection(conectionstringAdress);
-builder.Services.AddAutoMapper (typeof(Program));
-builder.Services.AddIdentity<ApplicationUser,ApplicationRole>(opt =>
+builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(opt =>
     {
         opt.Password.RequireDigit = false;
         opt.Password.RequireLowercase = false;
@@ -32,9 +34,9 @@ builder.Services.AddIdentity<ApplicationUser,ApplicationRole>(opt =>
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IJWTTokenGenrator, JWTTokenGenrator>();
-
+builder.Services.AddScoped<IFisicalReposetory, FisicalReposetory>();
 var app = builder.Build();
- 
+
 if (app.Environment.IsDevelopment())
 
 {
