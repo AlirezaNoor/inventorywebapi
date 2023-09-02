@@ -1,6 +1,7 @@
 ﻿using INV.Domin;
 using INV.Domin.Counteries;
 using INV.Domin.FisicalYear;
+using INV.Domin.Inventories;
 using INV.Domin.Products;
 using INV.Domin.Stores;
 using INV.Domin.Supplier;
@@ -25,7 +26,7 @@ namespace INV.Services.Reposetory
         private genricReposetory<product> _product;
          private  genricReposetory<FisicalYear> _fisicalYear;
           private genricReposetory<Store> _store;
-
+        private genricReposetory<Inventory> _inventory;
         public genricReposetory<ApplicationUser> applicationuserUw
         {
             get
@@ -119,6 +120,18 @@ namespace INV.Services.Reposetory
             }
         }
 
+        public genricReposetory<Inventory> InvenetoryUW
+        {
+            get
+            {
+                if (_inventory==null)
+                {
+                    _inventory = new genricReposetory<Inventory>(_context);
+                }
+
+                return _inventory;
+            }
+        }
         public void Dispose()
         {
             _context.Dispose();
