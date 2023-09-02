@@ -15,3 +15,5 @@ D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\obj\Debug\net7.0\
 D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\obj\Debug\net7.0\refint\INV.Services.dll
 D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\obj\Debug\net7.0\INV.Services.pdb
 D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\obj\Debug\net7.0\ref\INV.Services.dll
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\bin\Debug\net7.0\INV.Applicationcontract.dll
+D:\aspinventoryproject\WebapiFull\InventoryWebApi\INV.Services\bin\Debug\net7.0\INV.Applicationcontract.pdb

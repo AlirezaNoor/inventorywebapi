@@ -1,6 +1,7 @@
 ﻿using INV.Domin;
 using INV.Domin.Counteries;
 using INV.Domin.FisicalYear;
+using INV.Domin.Inventories;
 using INV.Domin.Products;
 using INV.Domin.Stores;
 using INV.Domin.Supplier;
@@ -17,6 +18,7 @@ public class ApplicationDbcointext:IdentityDbContext<ApplicationUser,Application
     public DbSet<product> Products { get; set; }
     public DbSet<FisicalYear> FisicalYears { get; set; }
     public DbSet<Store> store { get; set; }
+    public DbSet<Inventory> inventory { get; set; }
     public ApplicationDbcointext(DbContextOptions<ApplicationDbcointext> options) : base(options)
     {
     }
@@ -31,5 +33,6 @@ public class ApplicationDbcointext:IdentityDbContext<ApplicationUser,Application
         builder.ApplyConfiguration(new Productmapping());
         builder.ApplyConfiguration(new FisicalyearMapping());
         builder.ApplyConfiguration(new StoreMapping());
+        builder.ApplyConfiguration(new InevntoryMapping());
     }
 }

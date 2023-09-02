@@ -800,6 +800,7 @@
       },
       "INV.Services/1.0.0": {
         "dependencies": {
+          "INV.Applicationcontract": "1.0.0",
           "INV.Infastructure": "1.0.0"
         },
         "runtime": {

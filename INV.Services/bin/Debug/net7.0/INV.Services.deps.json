@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "INV.Services/1.0.0": {
         "dependencies": {
+          "INV.Applicationcontract": "1.0.0",
           "INV.Infastructure": "1.0.0"
         },
         "runtime": {
@@ -663,6 +664,14 @@
           }
         }
       },
+      "INV.Applicationcontract/1.0.0": {
+        "dependencies": {
+          "INV.Domin": "1.0.0"
+        },
+        "runtime": {
+          "INV.Applicationcontract.dll": {}
+        }
+      },
       "INV.Domin/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.10"
@@ -1151,6 +1160,11 @@
       "sha512": "sha512-c1ho9WU9ZxMZawML+ssPKZfdnrg/OjR3pe0m9v8230z3acqphwvPJqzAkH54xRYm5ntZHGG1EPP3sux9H3qSPg==",
       "path": "system.windows.extensions/5.0.0",
       "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
+    },
+    "INV.Applicationcontract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "INV.Domin/1.0.0": {
       "type": "project",
