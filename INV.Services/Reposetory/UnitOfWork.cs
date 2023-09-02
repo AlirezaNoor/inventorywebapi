@@ -1,5 +1,6 @@
 ﻿using INV.Domin;
 using INV.Domin.Counteries;
+using INV.Domin.FisicalYear;
 using INV.Domin.Products;
 using INV.Domin.Supplier;
 using INV.Infastructure;
@@ -21,6 +22,7 @@ namespace INV.Services.Reposetory
         private genricReposetory<Country> _coiuntrie;
         private genricReposetory<SupplierAgg> _supplier;
         private genricReposetory<product> _product;
+         private  genricReposetory<FisicalYear> _fisicalYear;
 
         public genricReposetory<ApplicationUser> applicationuserUw
         {
@@ -86,6 +88,21 @@ namespace INV.Services.Reposetory
         public ITransaction transaction()
         {
             return new Transaction(_context);
+        }
+
+
+
+        public genricReposetory<FisicalYear> fisiscalyearuw
+        {
+            get
+            {
+                if (_fisicalYear==null)
+                {
+                    _fisicalYear = new genricReposetory<FisicalYear>(_context);
+                }
+
+                return _fisicalYear;
+            }
         }
 
         public void Dispose()

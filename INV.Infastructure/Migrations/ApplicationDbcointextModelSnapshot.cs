@@ -158,6 +158,41 @@ namespace INV.Infastructure.Migrations
                     b.ToTable("countery", (string)null);
                 });
 
+            modelBuilder.Entity("INV.Domin.FisicalYear.FisicalYear", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("Createfiscalyear")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("EndDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("FisicalFlag")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("StartDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("FisicalYear", (string)null);
+                });
+
             modelBuilder.Entity("INV.Domin.Products.product", b =>
                 {
                     b.Property<long>("id")
@@ -330,6 +365,17 @@ namespace INV.Infastructure.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("INV.Domin.FisicalYear.FisicalYear", b =>
+                {
+                    b.HasOne("INV.Domin.ApplicationUser", "user")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("user");
                 });
 
             modelBuilder.Entity("INV.Domin.Products.product", b =>

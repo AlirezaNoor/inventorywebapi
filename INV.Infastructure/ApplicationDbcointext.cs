@@ -1,5 +1,6 @@
 ﻿using INV.Domin;
 using INV.Domin.Counteries;
+using INV.Domin.FisicalYear;
 using INV.Domin.Products;
 using INV.Domin.Supplier;
 using INV.Infastructure.Mapping;
@@ -13,6 +14,7 @@ public class ApplicationDbcointext:IdentityDbContext<ApplicationUser,Application
     public DbSet<SupplierAgg> Supplier { get; set; }
     public DbSet<Country> Countries { get; set; }
     public DbSet<product> Products { get; set; }
+    public DbSet<FisicalYear> FisicalYears { get; set; }
     public ApplicationDbcointext(DbContextOptions<ApplicationDbcointext> options) : base(options)
     {
     }
@@ -25,5 +27,6 @@ public class ApplicationDbcointext:IdentityDbContext<ApplicationUser,Application
         builder.ApplyConfiguration(new supplierMapping());
         builder.ApplyConfiguration(new Counterymapping());
         builder.ApplyConfiguration(new Productmapping());
+        builder.ApplyConfiguration(new FisicalyearMapping());
     }
 }
