@@ -38,6 +38,7 @@ builder.Services.AddScoped<IJWTTokenGenrator, JWTTokenGenrator>();
 builder.Services.AddScoped<IFisicalReposetory, FisicalReposetory>();
 builder.Services.AddScoped<IStoreRepository, StoreRepository>();
 builder.Services.AddScoped<IInventoryreposetory, Inventoryreposetory>();
+builder.Services.AddScoped<IProductpriceRposetory, ProductpriceRposetory>();
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

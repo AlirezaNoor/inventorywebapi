@@ -1,6 +1,7 @@
 ﻿using INV.Applicationcontract.produtcprice;
 using INV.Domin.productsPrice;
 using INV.Services.Intertface;
+using INV.Services.Intertface.CostumReposetpory;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InventoryWebApi.Controllers
@@ -10,22 +11,30 @@ namespace InventoryWebApi.Controllers
     public class productPriceController : ControllerBase
     {
         private readonly IUnitOfWork _cotext;
-
-        public productPriceController(IUnitOfWork cotext)
+        private readonly IProductpriceRposetory _productpriceRposetory;
+        public productPriceController(IUnitOfWork cotext, IProductpriceRposetory productpriceRposetory)
         {
             _cotext = cotext;
+            _productpriceRposetory = productpriceRposetory;
         }
         [HttpGet]
         [Route("produtcPrices")]
-        public IEnumerable<ProductPrice> getall()
+        public IEnumerable<ProductPriceViewmodel> getall(long fisicalyear)
         {
-            return _cotext.productpriceuw.get();
+            return _productpriceRposetory.getprice(fisicalyear);
         }
         [HttpGet]
         [Route("produtcprice")]
-        public ProductPrice Getbyid(long id)
+        public IActionResult Getbyid(long id)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
+            var price = _cotext.productpriceuw.Getbyid(id);
+
+            return price == null ? NotFound() : Ok(price);
         }
         [HttpPost]
         [Route("create")]
@@ -39,7 +48,7 @@ namespace InventoryWebApi.Controllers
             var price = _cotext.productpriceuw.get(x =>
                 x.productid == e.productid && x.Fisicalyearid == e.Fisicalyearid &&
                 x.actiondate > e.actiondate);
-            if (price.Count()>0)
+            if (price.Count() > 0)
             {
 
                 return StatusCode(504);
@@ -69,7 +78,7 @@ namespace InventoryWebApi.Controllers
             }
         }
 
-          
+
 
     }
 }
