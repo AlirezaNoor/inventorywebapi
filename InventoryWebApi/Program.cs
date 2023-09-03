@@ -31,6 +31,7 @@ builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(opt =>
     .AddRoleManager<RoleManager<ApplicationRole>>()
     .AddEntityFrameworkStores<ApplicationDbcointext>()
     .AddSignInManager<SignInManager<ApplicationUser>>();
+   
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IJWTTokenGenrator, JWTTokenGenrator>();

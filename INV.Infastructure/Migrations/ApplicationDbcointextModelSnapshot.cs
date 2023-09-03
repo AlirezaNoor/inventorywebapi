@@ -348,6 +348,50 @@ namespace INV.Infastructure.Migrations
                     b.ToTable("Supplier", (string)null);
                 });
 
+            modelBuilder.Entity("INV.Domin.productsPrice.ProductPrice", b =>
+                {
+                    b.Property<long>("ProductPriceid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ProductPriceid"));
+
+                    b.Property<long>("Fisicalyearid")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("OpertaionDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Purchaseprice")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("actiondate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("coverprice")
+                        .HasColumnType("int");
+
+                    b.Property<long>("productid")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("salesprice")
+                        .HasColumnType("int");
+
+                    b.Property<string>("userid")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("ProductPriceid");
+
+                    b.HasIndex("Fisicalyearid");
+
+                    b.HasIndex("productid");
+
+                    b.HasIndex("userid");
+
+                    b.ToTable("productprice", (string)null);
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.Property<int>("Id")
@@ -526,6 +570,33 @@ namespace INV.Infastructure.Migrations
                         .HasForeignKey("userid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("user");
+                });
+
+            modelBuilder.Entity("INV.Domin.productsPrice.ProductPrice", b =>
+                {
+                    b.HasOne("INV.Domin.FisicalYear.FisicalYear", "Fisical")
+                        .WithMany()
+                        .HasForeignKey("Fisicalyearid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("INV.Domin.Products.product", "Product")
+                        .WithMany()
+                        .HasForeignKey("productid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("INV.Domin.ApplicationUser", "user")
+                        .WithMany()
+                        .HasForeignKey("userid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Fisical");
+
+                    b.Navigation("Product");
 
                     b.Navigation("user");
                 });

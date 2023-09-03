@@ -3,6 +3,7 @@ using INV.Domin.Counteries;
 using INV.Domin.FisicalYear;
 using INV.Domin.Inventories;
 using INV.Domin.Products;
+using INV.Domin.productsPrice;
 using INV.Domin.Stores;
 using INV.Domin.Supplier;
 using INV.Infastructure;
@@ -27,6 +28,10 @@ namespace INV.Services.Reposetory
          private  genricReposetory<FisicalYear> _fisicalYear;
           private genricReposetory<Store> _store;
         private genricReposetory<Inventory> _inventory;
+        private genricReposetory<ProductPrice> _productprice;
+
+
+
         public genricReposetory<ApplicationUser> applicationuserUw
         {
             get
@@ -130,6 +135,19 @@ namespace INV.Services.Reposetory
                 }
 
                 return _inventory;
+            }
+        }
+
+        public genricReposetory<ProductPrice> productpriceuw
+        {
+            get
+            {
+                if (_productprice==null)
+                {
+                    _productprice = new genricReposetory<ProductPrice>(_context);
+                }
+
+                return _productprice;
             }
         }
         public void Dispose()
