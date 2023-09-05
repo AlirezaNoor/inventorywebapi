@@ -78,7 +78,29 @@ namespace InventoryWebApi.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("productprices")]
+        public IEnumerable<ProductPrice> getforoneproduct(long fisicalyearid, long productid)
+        {
+            return _cotext.productpriceuw.get(x => x.productid == productid && x.Fisicalyearid == fisicalyearid).ToList();
+        }
 
+        [HttpGet]
+        [Route("DeletePrice")]
+
+        public IActionResult Deleprice(long productpriceid)
+        {
+            var test = _cotext.productpriceuw.Getbyid(productpriceid);
+            if (test.actiondate > DateTime.Now)
+            {
+                _cotext.productpriceuw.deletebyid(productpriceid);
+                _cotext.save();
+                return Ok(200);
+            }
+
+            return StatusCode(505);
+
+        }
 
     }
 }

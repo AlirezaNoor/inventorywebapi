@@ -6,6 +6,7 @@ using INV.Domin.FisicalYear;
 using INV.Domin.Inventories;
 using INV.Domin.Products;
 using INV.Domin.productsPrice;
+using INV.Domin.StoreLocations;
 using INV.Domin.Stores;
 using INV.Domin.Supplier;
 using INV.Services.Reposetory;
@@ -23,6 +24,7 @@ namespace INV.Services.Intertface
         genricReposetory<Store> storeuw { get; }
         genricReposetory<Inventory> InvenetoryUW { get; }
         genricReposetory<ProductPrice> productpriceuw { get; }
+        genricReposetory<Storelocation> storelocationUW { get; }
         void save();
         void SaveAsync();
 

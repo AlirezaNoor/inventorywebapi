@@ -1,9 +1,11 @@
-﻿using INV.Domin;
+﻿using System.Security.Cryptography.X509Certificates;
+using INV.Domin;
 using INV.Domin.Counteries;
 using INV.Domin.FisicalYear;
 using INV.Domin.Inventories;
 using INV.Domin.Products;
 using INV.Domin.productsPrice;
+using INV.Domin.StoreLocations;
 using INV.Domin.Stores;
 using INV.Domin.Supplier;
 using INV.Infastructure;
@@ -29,6 +31,7 @@ namespace INV.Services.Reposetory
           private genricReposetory<Store> _store;
         private genricReposetory<Inventory> _inventory;
         private genricReposetory<ProductPrice> _productprice;
+        private genricReposetory<Storelocation> _storelocation; 
 
 
 
@@ -148,6 +151,20 @@ namespace INV.Services.Reposetory
                 }
 
                 return _productprice;
+            }
+        }
+
+        public genricReposetory<Storelocation> storelocationUW
+        {
+            get
+            {
+
+                if (_storelocation==null)
+                {
+                    _storelocation = new genricReposetory<Storelocation>(_context);
+                }
+
+                return _storelocation;
             }
         }
         public void Dispose()

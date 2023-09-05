@@ -289,6 +289,42 @@ namespace INV.Infastructure.Migrations
                     b.ToTable("Products", (string)null);
                 });
 
+            modelBuilder.Entity("INV.Domin.StoreLocations.Storelocation", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("StorId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("createiontime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("StorId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("StoreLocation", (string)null);
+                });
+
             modelBuilder.Entity("INV.Domin.Stores.Store", b =>
                 {
                     b.Property<long>("Id")
@@ -561,6 +597,33 @@ namespace INV.Infastructure.Migrations
                     b.Navigation("Country");
 
                     b.Navigation("Supplier");
+                });
+
+            modelBuilder.Entity("INV.Domin.StoreLocations.Storelocation", b =>
+                {
+                    b.HasOne("INV.Domin.Products.product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("INV.Domin.Stores.Store", "Store")
+                        .WithMany()
+                        .HasForeignKey("StorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("INV.Domin.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Store");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("INV.Domin.Stores.Store", b =>
