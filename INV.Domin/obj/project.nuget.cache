@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NahYI6y6pC0XhQYyQLZCClhth+tDHa0VKXSMR5zwP2Uu/Rsy08AI3wGutaSikNEG+r41tHTuXm3P3ctQTsddGA==",
+  "dgSpecHash": "cJS4owHOeDycFm9nE3Ud1qLyffZOneo2m9jGAPTXf+B0Bnf3KtGGfyW8VwBKGrwZqKx0MxfwuscIAycCz1M8BQ==",
   "success": true,
-  "projectFilePath": "D:\\aspinventoryproject\\WebapiFull\\InventoryWebApi\\INV.Domin\\INV.Domin.csproj",
+  "projectFilePath": "E:\\aspinventoryproject\\WebapiFull\\InventoryWebApi\\INV.Domin\\INV.Domin.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.10\\microsoft.aspnetcore.cryptography.internal.7.0.10.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.10\\microsoft.aspnetcore.cryptography.keyderivation.7.0.10.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/uaD2Y5K/0JbvD0KJhYTUnUm3VPNqtCV7zWg2OayUHL3sLjX3IpfRAkrKftPNYRC4/g/zC87v4axXKdALmPUgA==",
+  "dgSpecHash": "OjAxY4bBA8sFD7VWoMwxwIvR5NcJbcvOlei/NydH3zcM1nz3kvCnhu1nhe6c+J9sawHjUlfNr3wcIf+/lIIL2w==",
   "success": true,
-  "projectFilePath": "D:\\aspinventoryproject\\WebapiFull\\InventoryWebApi\\INV.Infastructure\\INV.Infastructure.csproj",
+  "projectFilePath": "E:\\aspinventoryproject\\WebapiFull\\InventoryWebApi\\INV.Infastructure\\INV.Infastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

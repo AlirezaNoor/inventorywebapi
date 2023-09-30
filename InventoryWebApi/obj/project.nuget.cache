@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "crAPCv9Ho50GE9IDEM2SPrd3py85bjMXrwQWC5UxJ882/ciIKqenUvdHxYP1F0/dRSPR6/DtuDjqjsodHCIeHg==",
+  "dgSpecHash": "3zDU42+Pc+0o/2vPvVTpRkqg7lwfvOcUq+NNMSIaKOT4EzEEEk5Si0yX/JS7TmHp6C7w/qFGlvv+7Hml3EQq7Q==",
   "success": true,
-  "projectFilePath": "D:\\aspinventoryproject\\WebapiFull\\InventoryWebApi\\InventoryWebApi\\InventoryWebApi.csproj",
+  "projectFilePath": "E:\\aspinventoryproject\\WebapiFull\\InventoryWebApi\\InventoryWebApi\\InventoryWebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
