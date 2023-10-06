@@ -76,5 +76,32 @@ name = x.Expirtiondate.ToString()
 
            return result;
         }
+
+        public IActionResult inventoryExit(inevetoryExit s)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            Inventory inventory = new()
+            {
+                description = s.description,
+                UserId = s.UserId,
+                oprationtype = 2,
+                prductcountmain = s.prductcountmain,
+                productcountwestage = 0,
+                FisicalyearId = s.FisicalyearId,
+                productId = s.productId,
+                storeId = s.storeId,
+                Expirtiondate = s.Expirtiondate,
+                Tyoprationdatepe = s.Tyoprationdatepe,
+                referenceid = s.invetoryref
+            };
+            _context.InvenetoryUW.insert(inventory);
+            _context.save();
+            return Ok(inventory);
+
+        }
     }
 }
