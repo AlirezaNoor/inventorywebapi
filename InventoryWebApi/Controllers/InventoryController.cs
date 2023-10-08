@@ -62,28 +62,31 @@ namespace InventoryWebApi.Controllers
             _context.save();
             return Ok();
         }
-
+        [HttpGet]
+        [Route("Expiretimelist")]
         public IEnumerable<DToDD> expireddate(long productid, long storeid, long fisiscalyear)
         {
             var inventory = _context.InvenetoryUW.get(x =>
                 x.productId == productid && x.storeId == storeid && x.FisicalyearId == fisiscalyear);
 
-           var result= inventory.Select(x => new DToDD()
+            var result = inventory.Select(x => new DToDD()
             {
-Id = x.InventoryId,
-name = x.Expirtiondate.ToString()
+                Id = x.InventoryId,
+                name = x.Expirtiondate.ToString()
             }).ToList();
 
-           return result;
+            return result;
         }
 
+        [HttpPost]
+        [Route("inventoyrExit")]
         public IActionResult inventoryExit(inevetoryExit s)
         {
-
             if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
+
             Inventory inventory = new()
             {
                 description = s.description,
@@ -101,7 +104,6 @@ name = x.Expirtiondate.ToString()
             _context.InvenetoryUW.insert(inventory);
             _context.save();
             return Ok(inventory);
-
         }
     }
 }
